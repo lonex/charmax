@@ -1,0 +1,27 @@
+{
+  "name": "charmax"
+ ,"version": "0.1.0"
+ ,"description": "Find out max displayable characters of various font style within a given size view element in the browser"
+ ,"author": "Wenchang <wenchang@triggit.com>"
+ ,"license": "MIT"
+ ,"homepage": "https://github.com/triggit/charmax"
+ ,"main": "lib/ad"
+ ,"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+ ,"engines": {
+    "node": ">=0.10"
+  }
+ ,"repository": {
+    "type": "git",
+    "url": "git://github.com/triggit/charmax.git"
+  }
+  ,"preferGlobal": "true"
+  ,"bin": {
+    "charmax": "lib/charmax.js"
+  }
+  ,"dependencies": {
+    "phantomjs":  "~1.9.7",
+    "lodash": "~2.4.1"
+  }
+}
