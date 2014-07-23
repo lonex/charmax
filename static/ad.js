@@ -7,6 +7,30 @@
   $.fn.maxChar = function() {
 
     var shadowIdSuffix = "_shadow";
+    var sample = {
+      base: [
+             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+             'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor',
+             'in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,',
+             'sunt in culpa qui officia deserunt mollit anim id est laborum'
+
+            ].join(' ')
+    };
+
+    return this.each(function() {
+      var me = $(this)
+        , shadow = createShadow(this)
+        , content = ''
+        , maxLength = sample.base.length
+        ;
+
+      for (i=1; content.length < maxLength && compare(shadow, me); i++) {
+        content = sample.base.slice(0, i);
+        shadow.html(content);
+      }
+
+      me.html(content);
+    });
 
     function createShadow(pEl) {
       var shadow = 
@@ -22,25 +46,12 @@
          .height('auto');
       $(pEl).after(shadow);
       return shadow;
-    };
+    }
 
     function compare(shadow, original) {
-      return shadow.height() > original.height();
-    };
+      return shadow.height() < original.height();
+    }
 
-    return this.each(function() {
-      var me = $(this);
-
-      var shadow = createShadow(this);
-      var content = me.html();
-
-      while (content.length > 0 && compare(shadow, me)) {
-        content = content.slice(0, -1);
-        shadow.html(content);
-      }
-
-      me.html(content);
-    });
   };
 
 })(jQuery);
