@@ -8,42 +8,31 @@ html(lang="en")
     style(type='text/css').
       div.snippet {
         border: 1px dashed #888;
-        line-height: 25px;
+        /* line-height: 25px;*/
         margin: 50px 30px;
         padding: 0;
-        width: 300px;
+        width: #{css.width};
       }
 
       div.snippet p.measure {
         overflow: hidden;
         margin: 0;
         padding: 0;
-        width: 300px;
-        height: 60px;
+        width: #{css.width};
+        height: #{css.height};
 
-        font-family:Arvo,serif;
-        font-weight:400;
-        font-size:24pt;
+        font-variant:#{css['font-variant']};
+        font-family:"#{css['font-family']}";
+        font-weight:#{css['font-weight']};
+        font-size:#{css['font-size']};
+
         color:#000000;
       }
 
-      p#ad_300x60 {
-        width: 300px; 
-        height: 60px;
-      }
-
-      p#ad_300x120 {
-        width: 300px; 
-        height: 120px;
-      }
-
-      p#x {
-        font-variant: #{css['font-variant']};
-        font-size: #{css['font-size']};
+      div#done {
+        display: hidden;
       }
 
   body(style="margin: 0px; padding: 0px;")
     div.snippet
-       p#ad_300x60.measure
-    p#done.measure
-      i am Max.
+      p#ad.measure

@@ -30,6 +30,7 @@
       }
 
       me.html(content);
+      shadow.after("<div id='done'></div>");
     });
 
     function createShadow(pEl) {
@@ -62,5 +63,8 @@
  * @return {[type]} [description]
  */
 $(function() {
-  $('.measure').maxChar();
+  // prevent js from running again when we inspect the debug in browser.
+  if (!$( "#done" ).length) {
+    $('#ad').maxChar();
+  }
 });
