@@ -14,6 +14,13 @@ The next step, you can query the database for the result. E.g.
     > node lib/guess.js '{"font-weight": "normal", "font-size": "13px", "line-height" : "1.4", "font-family": "Times New Roman", "width": "200px", "height":"60px" }'
     => [157]  
 
+Install
+-------
+
+Nodejs and phantomjs are required. For phantomjs, use the [npm wrapper](https://www.npmjs.org/package/phantomjs). When in the root folder of the project, 
+    
+    > node install
+
 Phantomjs
 ---------
 
