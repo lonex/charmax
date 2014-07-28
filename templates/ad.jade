@@ -1,8 +1,12 @@
+if css['font-family'] == "Times New Roman"
+  - var family = "'" + css['font-family'] + "'"
+else
+  - var family = css['font-family']
+
 doctype html
 html(lang="en")
   head
     title= pageTitle
-    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
     script(src='../static/ad.js')
     style(type='text/css').
@@ -20,13 +24,14 @@ html(lang="en")
         width: #{css.width};
         height: #{css.height};
 
+        font-family:#{family};
         font-variant:#{css['font-variant']};
-        font-family:"#{css['font-family']}";
         font-weight:#{css['font-weight']};
         font-size:#{css['font-size']};
         line-height:#{css['line-height']};
         color:#000000;
       }
+
 
       div#done {
         display: hidden;
