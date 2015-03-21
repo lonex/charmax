@@ -4,7 +4,7 @@
     "description": "Find out max displayable characters of various font style within a given size view element in the browser",
     "author": "Wenchang <wenchang@triggit.com>",
     "license": "MIT",
-    "homepage": "https://github.com/triggit/charmax",
+    "homepage": "https://github.com/lonex/charmax",
     "main": "lib/ad",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/triggit/charmax.git"
+        "url": "git://github.com/lonex/charmax.git"
     },
     "preferGlobal": "true",
     "bin": {
